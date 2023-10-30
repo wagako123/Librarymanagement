@@ -1,23 +1,33 @@
 
+
 <template>
   <div>
-    <div class="bg-dark">
-      <v-container class="p-4">
-        <h2 class="text-center text-white">Vue (pinia) crud</h2>
-      </v-container>
-    </div>
-    <v-container class="my-3 ">
+   
+    <v-container >
      
-        <v-card>
-          <div>
+        <v-card class="my-3">
+          <div class="d-flex justify-space-between">
           <v-card-title>Authors(0)</v-card-title>
-          <v-btn text color="success">New</v-btn>
+          <router-link to="/create">
+            <v-btn  color="success" class="my-3">New</v-btn>
+          </router-link>
         </div>
 
         </v-card>
     </v-container>
   </div>
 </template>
+
+<script>
+import CreateAuthor from '@/components/createAuthor.vue';
+
+export default{
+  name:"HomeVue",
+  components:{
+    CreateAuthor,
+  }
+};
+</script>
 
 <style>
 .bg-dark{
