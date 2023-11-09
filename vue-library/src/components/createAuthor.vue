@@ -15,13 +15,13 @@
                             <v-text-field label="Enter the author's name" v-model="name">
 
                             </v-text-field>
-                            <v-text-field label="Enter the book's title" v-model="book">
+                            <v-text-field label="Enter the book's title" v-model="books">
 
                             </v-text-field>
-                            <v-text-field label="Enter the book's tags" v-model="tags">
-
-                            </v-text-field>
-                            <v-btn type="submit" justify="center" width=100% color="primary" class="my-3">Submit</v-btn>
+                            
+                            <v-btn type="submit" justify="center" width=100% color="primary" class="my-3">
+                                {{ isloading ? "Saving": "Save" }}
+                            </v-btn>
                             </form>
                         </v-card-subtitle>
                     </v-card>
@@ -40,16 +40,16 @@ export default{
     name:"CreateAuthor",
     data:()=>({
         name:'',
-        book:'',
-        tags:'',
+        books:'',
+      
     }),
     methods:{
         ...mapActions(useStore,['storeData']),
         store(){
             const data={
                 name:this.name,
-                book:this.book,
-                tags:this.tag,
+                books:this.books,
+               
             };
             this.storeData(data);
         }
