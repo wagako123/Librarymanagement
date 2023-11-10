@@ -15,16 +15,18 @@
 
         </v-card>
     </v-container>
+    <authorTable/>
   </div>
 </template>
 
 <script>
 import CreateAuthor from '@/components/createAuthor.vue';
+import authorTable from '@/components/authorTable.vue';
 
 export default{
   name:"HomeVue",
   components:{
-    CreateAuthor,
+    authorTable,
   }
 };
 </script>

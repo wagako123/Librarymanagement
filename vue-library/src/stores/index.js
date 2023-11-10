@@ -30,6 +30,15 @@ export const useStore = defineStore({
             }else{
                 alert(res.data.message)
             }
-        }
+        },
+        async getData(){
+            const res= await axios.get ("http://127.0.0.1:8000/api/Authors")
+            console.log(res)
+            if (res.data.success){
+                this. isloading=false;
+
+                this.authors= res.data.Author
+            }
+        },
     }
 })

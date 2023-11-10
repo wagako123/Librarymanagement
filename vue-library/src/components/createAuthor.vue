@@ -33,7 +33,7 @@
 
 <script lang="ts">
 
-import {mapActions} from 'pinia';
+import {mapActions, mapState} from 'pinia';
 import {useStore} from '@/stores';
 
 export default{
@@ -43,6 +43,9 @@ export default{
         books:'',
       
     }),
+    computed: {
+    ...mapState(useStore, ["isloading"]),
+  },
     methods:{
         ...mapActions(useStore,['storeData']),
         store(){
